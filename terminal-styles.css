@@ -5,12 +5,12 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: #000000; /* Dark background for terminal look */
-    color: #99ff99; /* Green text for terminal look */
-    font-family: monospace, monospace;
+    background: #000; /* Classic black background */
+    color: #33FF00; /* Green text color for old-school terminal look */
+    font-family: 'Courier New', Courier, monospace; /* Classic terminal font */
     padding: 40px;
     box-sizing: border-box;
-    overflow: auto;
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 /* Terminal Emulator */
@@ -19,29 +19,32 @@
     bottom: 0;
     width: 100%;
     min-height: 100%;
-    padding: 40px;
+    padding: 20px;
     font-size: 20px;
-    line-height: 25px;
-    box-sizing: border-box;
+    line-height: 1.4;
+    color: #33FF00; /* Green text for terminal look */
     text-align: left;
-    font-family: monospace;
-    font-weight: 700;
-    color: #99ff99; /* Green text for terminal look */
+    word-wrap: break-word;
+    white-space: pre-wrap;
 }
 
-/* Input Field Styling */
+/* Blinking Caret */
+@keyframes caretBlink {
+    0% { opacity: 0; }
+    50% { opacity: 0; }
+    51% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
 .terminal_emulator__field,
-.terminal_emulator__command {
+.terminal_emulator__command,
+.terminal_emulator__response {
     position: relative;
     padding: 0 1em;
     margin: 0 0 9px 0;
 }
 
-.terminal_emulator__response,
-.terminal_emulator__command b {
-    padding-bottom: 9px;
-}
-
+/* Input Field Styling */
 .terminal_emulator__field {
     display: inline-block;
     min-width: 1em;
@@ -55,8 +58,8 @@
     content: "";
     width: 1em;
     height: 1.5em;
-    background: #99ff99;
-    animation: caretBlink 1s infinite; /* Blinking cursor */
+    background: #33FF00; /* Green caret for terminal */
+    animation: caretBlink 1s infinite;
 }
 
 /* When waiting for input, hide the caret */
@@ -69,64 +72,15 @@
     display: none;
 }
 
-/* Blinking Caret */
-@keyframes caretBlink {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 0;
-    }
-    51% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 1;
-    }
+/* Terminal Emulator Response Styling */
+.terminal_emulator__response {
+    color: #33FF00; /* Green text for output */
 }
 
 /* Command Styling */
 .terminal_emulator__command {
-    position: relative;
-    padding: 0 1em;
-    margin: 0 0 9px 0;
-}
-
-.terminal_emulator__response {
-    position: relative;
-    padding: 0 1em;
-    margin: 0 0 9px 0;
-}
-
-/* Terminal Emulator Response Styling */
-.terminal_emulator__response,
-.terminal_emulator__command b {
-    padding-bottom: 9px;
-}
-
-.terminal_emulator__field,
-.terminal_emulator__command {
-    position: relative;
-    padding: 0 1em;
-    margin: 0 0 9px 0;
-}
-
-.terminal_emulator__response {
-    color: #99ff99; /* Green text for output */
-}
-
-.terminal_emulator__command {
-    color: #ffffff; /* White text for input */
-}
-
-/* Terminal Background and Text Colors */
-.terminal_emulator__field {
-    background-color: #000; /* Black background for the terminal text */
-}
-
-/* Style for the terminal input field when waiting for response */
-.waiting {
-    color: #ff6600; /* Change to orange when waiting */
+    color: #FFFFFF; /* White text for input */
+    font-weight: bold;
 }
 
 /* Custom Scrollbar (For when content exceeds screen size) */
@@ -139,7 +93,7 @@
 }
 
 .screen::-webkit-scrollbar-thumb {
-    background-color: #99ff99;
+    background-color: #33FF00;
     border-radius: 10px;
 }
 
@@ -192,7 +146,7 @@
 
 /* Hover Effects */
 .team-card:hover {
-    background-color: #007A3D; /* Example hover color for green card */
+    background-color: #007A3D; /* Hover green color */
     box-shadow: 0 4px 12px rgba(0, 122, 61, 0.6);
 }
 
@@ -202,148 +156,4 @@
 
 .team-card:hover .team-member-role {
     color: #000; /* Role text turns black on hover */
-}
-/* Terminal Screen */
-.screen {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000000; /* Dark background for terminal look */
-    color: #99ff99; /* Green text for terminal look */
-    font-family: monospace, monospace;
-    padding: 40px;
-    box-sizing: border-box;
-    overflow-y: auto; /* Enable vertical scrolling */
-}
-
-/* Terminal Emulator */
-.terminal_emulator {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    min-height: 100%;
-    padding: 40px;
-    font-size: 20px;
-    line-height: 25px;
-    box-sizing: border-box;
-    text-align: left;
-    font-family: monospace;
-    font-weight: 700;
-    color: #99ff99; /* Green text for terminal look */
-}
-
-/* Input Field Styling */
-.terminal_emulator__field,
-.terminal_emulator__command {
-    position: relative;
-    padding: 0 1em;
-    margin: 0 0 9px 0;
-}
-
-.terminal_emulator__response,
-.terminal_emulator__command b {
-    padding-bottom: 9px;
-}
-
-.terminal_emulator__field {
-    display: inline-block;
-    min-width: 1em;
-    min-height: 1.5em;
-    box-sizing: border-box;
-}
-
-.terminal_emulator__field:after {
-    right: 0;
-    bottom: 0.25em;
-    content: "";
-    width: 1em;
-    height: 1.5em;
-    background: #99ff99;
-    animation: caretBlink 1s infinite; /* Blinking cursor */
-}
-
-/* When waiting for input, hide the caret */
-.terminal_emulator__field.waiting {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.terminal_emulator__field.waiting:before {
-    display: none;
-}
-
-/* Blinking Caret */
-@keyframes caretBlink {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 0;
-    }
-    51% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Command Styling */
-.terminal_emulator__command {
-    position: relative;
-    padding: 0 1em;
-    margin: 0 0 9px 0;
-}
-
-.terminal_emulator__response {
-    position: relative;
-    padding: 0 1em;
-    margin: 0 0 9px 0;
-}
-
-/* Terminal Emulator Response Styling */
-.terminal_emulator__response,
-.terminal_emulator__command b {
-    padding-bottom: 9px;
-}
-
-.terminal_emulator__field,
-.terminal_emulator__command {
-    position: relative;
-    padding: 0 1em;
-    margin: 0 0 9px 0;
-}
-
-.terminal_emulator__response {
-    color: #99ff99; /* Green text for output */
-}
-
-.terminal_emulator__command {
-    color: #ffffff; /* White text for input */
-}
-
-/* Terminal Background and Text Colors */
-.terminal_emulator__field {
-    background-color: #000; /* Black background for the terminal text */
-}
-
-/* Style for the terminal input field when waiting for response */
-.waiting {
-    color: #ff6600; /* Change to orange when waiting */
-}
-
-/* Custom Scrollbar (For when content exceeds screen size) */
-.screen::-webkit-scrollbar {
-    width: 8px;
-}
-
-.screen::-webkit-scrollbar-track {
-    background: #333;
-}
-
-.screen::-webkit-scrollbar-thumb {
-    background-color: #99ff99;
-    border-radius: 10px;
 }
