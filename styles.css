@@ -1,0 +1,479 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #FFFFFF; /* Clean white background */
+    color: #000000; /* Black text for readability */
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Custom Cursor Styles */
+.custom-cursor, .cursor-trail {
+    position: fixed;
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 9999;
+}
+
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #cf1027;
+}
+
+.cursor-trail {
+    width: 10px;
+    height: 10px;
+    background: #cf1027;
+    z-index: 9998;
+}
+
+/* Animations for Cursor */
+@keyframes glitch {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+}
+
+/* Landing Section */
+.landing {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.glitch-text {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #000000;
+    text-shadow: 2px 2px #cf1027;
+    animation: glitch 1s infinite;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.bsides-flag {
+    width: 300px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 2rem;
+}
+
+/* Matrix Rain Background */
+.matrix-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.matrix-column {
+    position: absolute;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    white-space: nowrap;
+    animation: fall linear infinite;
+    color: rgba(50, 50, 50, 0.2);
+}
+
+@keyframes fall {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(100vh); }
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.navbar.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navbar-logo .logo {
+    width: 130px;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 4.5rem;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.navbar-links li a:hover {
+    color: #cf1027;
+}
+
+/* Social Media Icons */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+.social-media .icon {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.social-media .icon a {
+    text-decoration: none;
+    color: #000;
+}
+
+.social-media .icon i {
+    font-size: 3.5em;
+}
+
+.social-media .icon p {
+    margin-top: 12px;
+    font-size: 1.2em;
+}
+
+.social-media .icon:hover {
+    transform: translateY(-10px);
+    color: #cf1027;
+}
+
+/* FAQ Section */
+.faq {
+    padding: 4rem 2rem;
+    background: #ffffff;
+}
+
+.faq h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    letter-spacing: 0.1em;
+}
+
+.faq-item {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    padding: 1.5rem;
+    border: 2px solid #cf1027;
+    border-radius: 6px;
+    background: #f9f9f9;
+}
+
+.faq-question {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.faq-answer {
+    color: #666666;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* Contact Section */
+.contact {
+    padding: 4rem 2rem;
+    background: #ffffff;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 1px solid #cf1027;
+    border-radius: 6px;
+    background: #f9f9f9;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    padding: 0.75rem 1.5rem;
+    background: #cf1027;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background: #b9001f;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar-links {
+        gap: 2rem;
+    }
+
+    .social-media {
+        gap: 20px;
+    }
+
+    .carousel-item {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .glitch-text {
+        font-size: 2.5rem;
+    }
+
+    .carousel-item {
+        width: 150px;
+    }
+
+    .bsides-flag {
+        width: 300px;
+        height: 300px;
+    }
+
+    .team h2 {
+        font-size: 2rem;
+    }
+}
+/* Social Media Icons */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+.social-media .icon {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.social-media .icon a {
+    text-decoration: none;
+    color: #000; /* Default color */
+}
+
+.social-media .icon i {
+    font-size: 3.5em;
+}
+
+.social-media .icon p {
+    margin-top: 12px;
+    font-size: 1.2em;
+}
+
+.social-media .icon:hover {
+    transform: translateY(-10px);
+}
+
+.social-media .icon:hover a {
+    color: #cf1027; /* Default color on hover */
+}
+/* Team Section */
+/* Team Section */
+/* Team Section */
+/* Team Section */
+/* Team Section */
+.team {
+    padding: 4rem 2rem;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.team h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Flex Container for Cards */
+.team-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 2rem; /* Space between cards */
+    overflow-x: auto; /* Allow horizontal scrolling if necessary */
+}
+
+.team-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.2); /* Cool shadow reflecting Jordan traditions */
+    padding: 1.5rem;
+    width: 250px;
+    text-align: center;
+    flex-shrink: 0; /* Prevent the cards from shrinking */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transition for smooth hover effect */
+}
+
+.team-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-member-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Circle image */
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.team-member-name {
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: 0.5rem;
+    white-space: nowrap; /* Prevent the text from breaking */
+    overflow: hidden; /* Ensure it doesn't overflow the container */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+.team-member-role {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.linkedin-icon {
+    font-size: 1.2rem;
+    color: #0077b5; /* LinkedIn Blue */
+    transition: color 0.3s ease;
+}
+
+/* Hover Colors for the Whole Card */
+.team-card:nth-child(1):hover {
+    background-color: #007A3D; /* Jordan flag green */
+    box-shadow: 0 4px 12px rgba(0, 122, 61, 0.6); /* Stronger green shadow */
+}
+
+.team-card:nth-child(2):hover {
+    background-color: #CE1126; /* Jordan flag red */
+    box-shadow: 0 4px 12px rgba(206, 17, 38, 0.6); /* Stronger red shadow */
+}
+
+.team-card:nth-child(3):hover {
+    background-color: #007A3D; /* Jordan flag green */
+    box-shadow: 0 4px 12px rgba(0, 122, 61, 0.6); /* Stronger green shadow */
+}
+
+.team-card:nth-child(4):hover {
+    background-color: #CE1126; /* Jordan flag red */
+    box-shadow: 0 4px 12px rgba(206, 17, 38, 0.6); /* Stronger red shadow */
+}
+
+.team-card:nth-child(5):hover {
+    background-color: #007A3D; /* Jordan flag green */
+    box-shadow: 0 4px 12px rgba(0, 122, 61, 0.6); /* Stronger green shadow */
+}
+
+.team-card:nth-child(6):hover {
+    background-color: #CE1126; /* Jordan flag red */
+    box-shadow: 0 4px 12px rgba(206, 17, 38, 0.6); /* Stronger red shadow */
+}
+
+.team-card:nth-child(7):hover {
+    background-color: #007A3D; /* Jordan flag green */
+    box-shadow: 0 4px 12px rgba(0, 122, 61, 0.6); /* Stronger green shadow */
+}
+
+.team-card:nth-child(8):hover {
+    background-color: #CE1126; /* Jordan flag red */
+    box-shadow: 0 4px 12px rgba(206, 17, 38, 0.6); /* Stronger red shadow */
+}
+
+/* Hover Effect for LinkedIn Icon */
+.team-card:nth-child(1):hover .linkedin-icon,
+.team-card:nth-child(3):hover .linkedin-icon,
+.team-card:nth-child(5):hover .linkedin-icon,
+.team-card:nth-child(7):hover .linkedin-icon {
+    color: #FFFFFF; /* White LinkedIn icon for green cards */
+}
+
+.team-card:nth-child(2):hover .linkedin-icon,
+.team-card:nth-child(4):hover .linkedin-icon,
+.team-card:nth-child(6):hover .linkedin-icon,
+.team-card:nth-child(8):hover .linkedin-icon {
+    color: #000000; /* Black LinkedIn icon for red cards */
+}
+
+/* Hover Effect for Team Role */
+.team-card:hover .team-member-role {
+    color: #000; /* Change role color to black on hover */
+}
+
+/* Make sure the cards don't overflow the container */
+.team-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .team-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-card {
+        width: 100%; /* Make cards full width on smaller screens */
+        max-width: 300px;
+    }
+}
+
