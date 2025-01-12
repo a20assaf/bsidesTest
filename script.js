@@ -88,3 +88,23 @@ document.querySelectorAll('.skill').forEach(skill => {
     skill.querySelector('::after').style.width = level + '%';
 });
 
+function adjustLayoutForMobile() {
+    const elements = document.querySelectorAll('.responsive-element');
+    if (window.innerWidth <= 600) {
+        elements.forEach(element => {
+            element.style.fontSize = '14px';
+            element.style.padding = '10px';
+        });
+    } else {
+        elements.forEach(element => {
+            element.style.fontSize = '16px';
+            element.style.padding = '20px';
+        });
+    }
+}
+
+window.addEventListener('resize', adjustLayoutForMobile);
+window.addEventListener('load', adjustLayoutForMobile);
+
+// Add any responsive functionality if needed
+
