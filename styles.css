@@ -1,4 +1,150 @@
-/* Reset and Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em 1em;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer .social-icons {
+    margin-top: 0.5em;
+}
+
+footer .social-icons a {
+    color: #fff;
+    margin: 0 0.5em;
+    text-decoration: none;
+}
+
+footer .social-icons a:hover {
+    color: #ddd;
+}
+
+.landing {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.bsides-flag {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1.5rem;
+}
+
+.glitch-text {
+    font-size: 3rem;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.social-media {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-media .icon {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.social-media .icon i {
+    font-size: 2.5rem;
+}
+
+.social-media .icon p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+.social-media .icon:hover {
+    transform: scale(1.1);
+}
+
+.matrix-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    .glitch-text {
+        font-size: 2.5rem;
+    }
+
+    .social-media {
+        gap: 1rem;
+        flex-direction: column;
+    }
+
+    .social-media .icon i {
+        font-size: 2rem;
+    }
+
+    .bsides-flag {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .glitch-text {
+        font-size: 2rem;
+    }
+
+    .social-media .icon p {
+        font-size: 0.9rem;
+    }
+
+    .bsides-flag {
+        width: 70%;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,14 +157,13 @@ html {
 }
 
 body {
-    background-color: #FFFFFF; /* Clean white background */
-    color: #000000; /* Black text for readability */
+    background-color: #FFFFFF;
+    color: #000000;
     font-family: 'Courier New', monospace;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* Custom Cursor Styles */
 .custom-cursor, .cursor-trail {
     position: fixed;
     pointer-events: none;
@@ -39,7 +184,6 @@ body {
     z-index: 9998;
 }
 
-/* Animations for Cursor */
 @keyframes glitch {
     0%, 100% { transform: translate(0); }
     20% { transform: translate(-2px, 2px); }
@@ -48,7 +192,6 @@ body {
     80% { transform: translate(2px, -2px); }
 }
 
-/* Landing Section */
 .landing {
     height: 100vh;
     display: flex;
@@ -76,7 +219,6 @@ body {
     margin-bottom: 2rem;
 }
 
-/* Matrix Rain Background */
 .matrix-bg {
     position: absolute;
     top: 0;
@@ -101,7 +243,6 @@ body {
     to { transform: translateY(100vh); }
 }
 
-/* Navbar Styles */
 .navbar {
     width: 100%;
     padding: 1rem 2rem;
@@ -146,14 +287,6 @@ body {
     color: #cf1027;
 }
 
-/* Social Media Icons */
-.social-media {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 2rem;
-}
-
 .social-media .icon {
     text-align: center;
     transition: transform 0.3s ease;
@@ -178,7 +311,6 @@ body {
     color: #cf1027;
 }
 
-/* FAQ Section */
 .faq {
     padding: 4rem 2rem;
     background: #ffffff;
@@ -212,7 +344,6 @@ body {
     line-height: 1.5;
 }
 
-/* Contact Section */
 .contact {
     padding: 4rem 2rem;
     background: #ffffff;
@@ -259,7 +390,6 @@ body {
     background: #b9001f;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
     .navbar-links {
         gap: 2rem;
@@ -292,13 +422,6 @@ body {
         font-size: 2rem;
     }
 }
-/* Social Media Icons */
-.social-media {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 2rem;
-}
 
 .social-media .icon {
     text-align: center;
@@ -307,7 +430,7 @@ body {
 
 .social-media .icon a {
     text-decoration: none;
-    color: #000; /* Default color */
+    color: #000;
 }
 
 .social-media .icon i {
@@ -324,13 +447,9 @@ body {
 }
 
 .social-media .icon:hover a {
-    color: #cf1027; /* Default color on hover */
+    color: #cf1027;
 }
-/* Team Section */
-/* Team Section */
-/* Team Section */
-/* Team Section */
-/* Team Section */
+
 .team {
     padding: 4rem 2rem;
     background: #f9f9f9;
@@ -342,24 +461,22 @@ body {
     margin-bottom: 2rem;
 }
 
-/* Flex Container for Cards */
 .team-cards {
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
-    gap: 2rem; /* Space between cards */
-    overflow-x: auto; /* Allow horizontal scrolling if necessary */
+    gap: 2rem;
 }
 
 .team-card {
     background: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.2); /* Cool shadow reflecting Jordan traditions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.2);
     padding: 1.5rem;
     width: 250px;
     text-align: center;
-    flex-shrink: 0; /* Prevent the cards from shrinking */
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transition for smooth hover effect */
+    flex-shrink: 0;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .team-card-content {
@@ -371,7 +488,7 @@ body {
 .team-member-image {
     width: 80px;
     height: 80px;
-    border-radius: 50%; /* Circle image */
+    border-radius: 50%;
     object-fit: cover;
     margin-bottom: 1rem;
 }
@@ -380,9 +497,9 @@ body {
     font-size: 1.5rem;
     color: #000;
     margin-bottom: 0.5rem;
-    white-space: nowrap; /* Prevent the text from breaking */
-    overflow: hidden; /* Ensure it doesn't overflow the container */
-    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .team-member-role {
@@ -394,72 +511,68 @@ body {
 
 .linkedin-icon {
     font-size: 1.2rem;
-    color: #0077b5; /* LinkedIn Blue */
+    color: #0077b5;
     transition: color 0.3s ease;
 }
 
-/* Hover Colors for the Whole Card */
 .team-card:nth-child(1):hover {
-    background-color: #007A3D; /* Jordan flag green */
-    box-shadow: 0 4px 12px rgba(0, 122, 61, 0.6); /* Stronger green shadow */
+    background-color: #007A3D;
+    box-shadow: 0 4px 12px rgba(0, 122, 61, 0.6);
 }
 
 .team-card:nth-child(2):hover {
-    background-color: #CE1126; /* Jordan flag red */
-    box-shadow: 0 4px 12px rgba(206, 17, 38, 0.6); /* Stronger red shadow */
+    background-color: #CE1126;
+    box-shadow: 0 4px 12px rgba(206, 17, 38, 0.6);
 }
 
 .team-card:nth-child(3):hover {
-    background-color: #007A3D; /* Jordan flag green */
-    box-shadow: 0 4px 12px rgba(0, 122, 61, 0.6); /* Stronger green shadow */
+    background-color: #007A3D;
+    box-shadow: 0 4px 12px rgba(0, 122, 61, 0.6);
 }
 
 .team-card:nth-child(4):hover {
-    background-color: #CE1126; /* Jordan flag red */
-    box-shadow: 0 4px 12px rgba(206, 17, 38, 0.6); /* Stronger red shadow */
+    background-color: #CE1126;
+    box-shadow: 0 4px 12px rgba(206, 17, 38, 0.6);
 }
 
 .team-card:nth-child(5):hover {
-    background-color: #007A3D; /* Jordan flag green */
-    box-shadow: 0 4px 12px rgba(0, 122, 61, 0.6); /* Stronger green shadow */
+    background-color: #007A3D;
+    box-shadow: 0 4px 12px rgba(0, 122, 61, 0.6);
 }
 
 .team-card:nth-child(6):hover {
-    background-color: #CE1126; /* Jordan flag red */
-    box-shadow: 0 4px 12px rgba(206, 17, 38, 0.6); /* Stronger red shadow */
+    background-color: #CE1126;
+    box-shadow: 0 4px 12px rgba(206, 17, 38, 0.6);
 }
 
 .team-card:nth-child(7):hover {
-    background-color: #007A3D; /* Jordan flag green */
-    box-shadow: 0 4px 12px rgba(0, 122, 61, 0.6); /* Stronger green shadow */
+    background-color: #007A3D;
+    box-shadow: 0 4px 12px rgba(0, 122, 61, 0.6);
 }
 
 .team-card:nth-child(8):hover {
-    background-color: #CE1126; /* Jordan flag red */
-    box-shadow: 0 4px 12px rgba(206, 17, 38, 0.6); /* Stronger red shadow */
+    background-color: #CE1126;
+    box-shadow: 0 4px 12px rgba(206, 17, 38, 0.6);
 }
 
-/* Hover Effect for LinkedIn Icon */
 .team-card:nth-child(1):hover .linkedin-icon,
 .team-card:nth-child(3):hover .linkedin-icon,
 .team-card:nth-child(5):hover .linkedin-icon,
 .team-card:nth-child(7):hover .linkedin-icon {
-    color: #FFFFFF; /* White LinkedIn icon for green cards */
+    color: #FFFFFF;
 }
 
 .team-card:nth-child(2):hover .linkedin-icon,
 .team-card:nth-child(4):hover .linkedin-icon,
 .team-card:nth-child(6):hover .linkedin-icon,
 .team-card:nth-child(8):hover .linkedin-icon {
-    color: #000000; /* Black LinkedIn icon for red cards */
+    color: #000000;
 }
 
-/* Hover Effect for Team Role */
 .team-card:hover .team-member-role {
-    color: #000; /* Change role color to black on hover */
+    color: #000;
 }
 
-/* Make sure the cards don't overflow the container */
 .team-cards {
     flex-wrap: wrap;
     justify-content: center;
@@ -472,8 +585,74 @@ body {
     }
 
     .team-card {
-        width: 100%; /* Make cards full width on smaller screens */
+        width: 100%;
         max-width: 300px;
     }
 }
 
+.team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.team-card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.team-card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.team-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.team-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 15px 0 10px;
+}
+
+.team-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .team-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-card-content {
+        padding: 15px;
+    }
+
+    .team-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .team-card p {
+        font-size: 0.9rem;
+    }
+}

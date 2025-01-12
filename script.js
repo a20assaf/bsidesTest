@@ -1,14 +1,11 @@
-/* Cursor Trail Effect */
 const cursorTrails = document.querySelectorAll('.cursor-trail');
 let mouseX = 0, mouseY = 0, trailCoords = [];
 
-// Track mouse movement
 document.addEventListener('mousemove', (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
 });
 
-// Animate the cursor trails
 function animateTrails() {
   trailCoords.unshift({ x: mouseX, y: mouseY });
 
@@ -26,7 +23,6 @@ function animateTrails() {
 }
 animateTrails();
 
-/* Matrix Rain Effect */
 function createMatrixRain() {
   const matrix = document.getElementById('matrix');
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*';
@@ -49,7 +45,6 @@ function createMatrixRain() {
 }
 createMatrixRain();
 
-// Recreate matrix rain on window resize (debounced)
 let resizeTimeout;
 window.addEventListener('resize', () => {
   clearTimeout(resizeTimeout);
@@ -60,39 +55,33 @@ window.addEventListener('resize', () => {
   }, 300);
 });
 
-/* Navbar Show/Hide on Mouse Movement */
 const navbar = document.querySelector('.navbar');
 let navbarTimeout;
 
 function showNavbar() {
   navbar.classList.add('visible');
 
-  // Reset hide timeout
   clearTimeout(navbarTimeout);
   navbarTimeout = setTimeout(() => {
     navbar.classList.remove('visible');
-  }, 3000); // Hide after 3 seconds of inactivity
+  }, 3000);
 }
 
-// Show/hide navbar on mouse movement
 document.addEventListener('mousemove', showNavbar);
 
-// Show navbar on touch for mobile devices
 document.addEventListener('touchstart', showNavbar);
 
-// Hide navbar on scroll
 let lastScrollTop = 0;
 window.addEventListener('scroll', () => {
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
   if (scrollTop > lastScrollTop) {
-    navbar.classList.remove('visible'); // Scrolling down
+    navbar.classList.remove('visible');
   } else {
-    navbar.classList.add('visible'); // Scrolling up
+    navbar.classList.add('visible');
   }
-  lastScrollTop = Math.max(0, scrollTop); // Prevent negative scrolling
+  lastScrollTop = Math.max(0, scrollTop);
 });
-
 
 document.querySelectorAll('.skill').forEach(skill => {
     const level = skill.getAttribute('data-level');

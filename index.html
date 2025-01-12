@@ -10,10 +10,30 @@
     <link rel="stylesheet" href="terminal-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the new stylesheet -->
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <!-- Terminal Emulator -->
     <div id="screen" class="screen"></div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 BSides Team. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="terminal-script.js"></script>
